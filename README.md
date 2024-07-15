@@ -6,3 +6,9 @@ We removed punctuation from our data and also made all the comments lowercase.
 We removed common words like it, the, a, and, to for the purpose of finding patterns with the words in the comments.
 ## Data Exploration
 We made a chart of some frequently used words in comments and the scores they had. So far we were only able to do this on a shortened version of the datafram.
+
+![score_and_words](DataCleaning\graphs\score_and_words.png)
+
+![score_per_comment](DataCleaning\graphs\score_per_comment_by_subreddit_from_640k_samples.png)
+
+![word_freq](DataCleaning\graphs\word_frequencies_from_640k_samples.png)
