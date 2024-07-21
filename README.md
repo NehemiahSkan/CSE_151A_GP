@@ -33,6 +33,8 @@ File Link: [DataExploration.ipynb](DataCleaning\DataExploration.ipynb)
 ## Milestone 3 Pre-Processing
 By creating a linear regression model to look for linear a relationship between the comment "score," and the vectorized content of the comment, we found that the data is more complex than that of a linear relationship. This result is expected. However, it informs us of how our data behaves and will hopefully be useful in creating a neural network to develop a better model.
 
+![actual_and_predicted_score](DataCleaning\graphs\actual_and_predicted_score.png)
+
 ```
 Training MSE: 126.049984140098530
 Training RMSE: 11.227198410115435
