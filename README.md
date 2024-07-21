@@ -26,7 +26,9 @@ File Link: [LocalPartialExploration.ipynb](DataCleaning\LocalPartialExploration.
 
 We also looked at the relation of score with words as a different overall metric.
 ![score_and_words](DataCleaning/graphs/score_and_words.png)
+
 File Link: [DataExploration.ipynb](DataCleaning\DataExploration.ipynb)
+
 
 ## Milestone 3 Pre-Processing
 By creating a linear regression model to look for linear a relationship between the comment "score," and the vectorized content of the comment, we found that the data is more complex than that of a linear relationship. This result is expected. However, it informs us of how our data behaves and will hopefully be useful in creating a neural network to develop a better model.
