@@ -22,18 +22,18 @@ We started by exploring the most common words.
 
 We then discovered some more insights on threads with the most "enthusiastic" comment participation.
 ![score_per_comment](DataCleaning/graphs/score_per_comment_by_subreddit_from_640k_samples.png)
-File Link: [LocalPartialExploration.ipynb](DataCleaning\LocalPartialExploration.ipynb)
+File Link: [LocalPartialExploration.ipynb](DataCleaning/LocalPartialExploration.ipynb)
 
 We also looked at the relation of score with words as a different overall metric.
 ![score_and_words](DataCleaning/graphs/score_and_words.png)
 
-File Link: [DataExploration.ipynb](DataCleaning\DataExploration.ipynb)
+File Link: [DataExploration.ipynb](DataCleaning/DataExploration.ipynb)
 
 
 ## Milestone 3 Pre-Processing
 By creating a linear regression model to look for linear a relationship between the comment "score," and the vectorized content of the comment, we found that the data is more complex than that of a linear relationship. This result is expected. However, it informs us of how our data behaves and will hopefully be useful in creating a neural network to develop a better model.
 
-![actual_and_predicted_score](DataCleaning\graphs\actual_and_predicted_score.png)
+![actual_and_predicted_score](DataCleaning/graphs/actual_and_predicted_score.png)
 
 ```
 Training MSE: 126.049984140098530
@@ -44,7 +44,7 @@ Test RMSE: 161.894778401275829
 Test R2: -6.699233625008288
 ```
 
-File Link: [PreProcess.ipynb](Pre_Processing\PreProcess.ipynb)
+File Link: [PreProcess.ipynb](Pre_Processing/PreProcess.ipynb)
 
 ### Conclusion
 As stated above, the we concluded that the linear model is insufficient to represent our data. However, we hope that in evaluating other categorical features, we can build a more robust model through neural networks to evaluate features such as the nature of the keyword, the context of the subreddit, in addition to the upvote/downvote score.
