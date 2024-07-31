@@ -65,3 +65,23 @@ The next model that we would like to consider is an RNN or a CNN to create a bet
 
 ### Conclusion
 As stated above, we concluded that the linear model is and a small RNN are insufficient to represent our data. However, we hope that in evaluating other categorical features, we can build a more robust model through neural networks to evaluate features such as the nature of the keyword, the context of the subreddit, in addition to the upvote/downvote score.
+
+
+# Milestone 4
+
+1. A complete introduction
+
+Comment sections are everywhere now. YouTube, Reddit, Twitter. There is no online forum where comments are not seen. People provide their views, advice, or say whatever they want. Oftentimes, there is a rating system associated with comments. Whether that is a actual score like with Reddit's upvote or downvote, or liked comments in YouTube. In our project, we hope to explore Reddit comments and the text's relationship with it's score (the number or upvotes/downvotes). Our model aims to predict the relevancy, or score, of future comments. This is important as we want people seeing good new comments rather than unless spam or junk that some people may often type onto the internet. 
+
+2. A complete submission including all prior submissions
+
+3. All code uploaded in the form of jupyter notebooks that can be easily followed along to your GitHub Repository. 
+
+4. A written report
+
+5. Your final model should be included in every section of your write up. i.e. Methods, Results, Discussion
+
+6. Your GitHub repo must be made public by the morning of the next day of the submission deadline.
+
+
+
