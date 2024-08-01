@@ -79,6 +79,7 @@ model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mean_absolu
 ```
 
 
+
 File Link: [LocalPreProcess.ipynb](Pre_Processing/LocalPreProcess.ipynb)
 
 
@@ -100,6 +101,8 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 
 
+
+
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
 
@@ -116,6 +119,7 @@ Test MAE: 14.083123207092285
 Test MSE: 6337.0185546875
 ```
 ![actual vs predict](/DataCleaning/graphs/small_RNN_pred_vs_actual.png)
+
 File Link: [improved_model.ipynb](/Improved_Model/improved_model.ipynb)
 
 
@@ -124,11 +128,13 @@ For the RNN model for subreddit classification, we used a fairly complex model a
 
 ![report](/DataCleaning/graphs/classification_report.png)
 ![confusion matrix](/DataCleaning/graphs/confusion_matrix.png)
+
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
 We got an overall accuracy on our classification predictions of 0.55. The training only ran for 2 epochs, where we used early_stopping to make sure that the model didn't overfit.
 
 ![loss graph](/DataCleaning/graphs/test_train_loss.png)
+
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
 
@@ -151,6 +157,7 @@ max     18085.000000
 We had found that even at the 75 percentile, the upvote count was still at only 6, which meant that an overwhelming amount of comments were between 0 and 6 upvotes. However, we were still trying to use it to predict those special comments that would've gotten the 18085 upvotes. However, for our dataset, those comments are essentially outliers, which would be impossibly hard to make the model predict. Thus, predictably, our model settled on making very low upvote count predictions for most comments and chose to ignore the outliers, as can be seen from the graph below:
 
 ![actual vs predict graph](/DataCleaning/graphs/small_RNN_pred_vs_actual.png)
+
 File Link: [improved_model.ipynb](/Improved_Model/improved_model.ipynb)
 
 
@@ -164,6 +171,7 @@ For this classification model, we ended up with rather good results. Out of the 
 ![confusion matrix](/DataCleaning/graphs/confusion_matrix.png)
 
 ![report](/DataCleaning/graphs/classification_report.png)
+
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
 
