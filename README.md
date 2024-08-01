@@ -16,6 +16,7 @@ We made a chart of frequently used words in comments and the corresponding upvot
 
 We started by exploring the most common words.
 ![word_freq](DataCleaning/graphs/word_frequencies_from_640k_samples.png)
+File Link: [LocalPartialExploration.ipynb](DataCleaning/LocalPartialExploration.ipynb)
 
 We then discovered some more insights on threads with the most "enthusiastic" comment participation.
 ![score_per_comment](DataCleaning/graphs/score_per_comment_by_subreddit_from_640k_samples.png)
@@ -111,17 +112,19 @@ Test MAE: 14.083123207092285
 Test MSE: 6337.0185546875
 ```
 ![actual vs predict](/DataCleaning/graphs/small_RNN_pred_vs_actual.png)
+File Link: [improved_model.ipynb](/Improved_Model/improved_model.ipynb)
 
 ### RNN Model 2 (Subreddit Classification)
 For the RNN model for subreddit classification, we used a fairly complex model and was able to get decent result for the predictions of from which of the top 10 subreddits the comments came from.
 
 ![report](/DataCleaning/graphs/classification_report.png)
 ![confusion matrix](/DataCleaning/graphs/confusion_matrix.png)
+File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
 We got an overall accuracy on our classification predictions of 0.55. The training only ran for 2 epochs, where we used early_stopping to make sure that the model didn't overfit.
 
 ![loss graph](/DataCleaning/graphs/test_train_loss.png)
-
+File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 ## Discussion
 ### RNN Model 1 (Score Prediction)
 For this first model, I believe that the main issue that it had was the simple fact that most comments do not receive a lot of upvotes. In hindsight, we should have realized that this would be an issue during our data cleaning and exploration.
@@ -141,6 +144,7 @@ max     18085.000000
 We had found that even at the 75 percentile, the upvote count was still at only 6, which meant that an overwhelming amount of comments were between 0 and 6 upvotes. However, we were still trying to use it to predict those special comments that would've gotten the 18085 upvotes. However, for our dataset, those comments are essentially outliers, which would be impossibly hard to make the model predict. Thus, predictably, our model settled on making very low upvote count predictions for most comments and chose to ignore the outliers, as can be seen from the graph below:
 
 ![actual vs predict graph](/DataCleaning/graphs/small_RNN_pred_vs_actual.png)
+File Link: [improved_model.ipynb](/Improved_Model/improved_model.ipynb)
 
 In conclusion, for this model, we tried to make a model predict something impossible. Which is the question of, out of millions of comments, which ones are going to go viral. If our model worked sucessfully, it probably would've been able to be used to make a lot of money.
 
@@ -150,6 +154,7 @@ For this classification model, we ended up with rather good results. Out of the 
 ![confusion matrix](/DataCleaning/graphs/confusion_matrix.png)
 
 ![report](/DataCleaning/graphs/classification_report.png)
+File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
 From the classification report, we can isolate some of the individual subreddits to see what may have cause the difference in precision and recall for them. 
 
