@@ -102,6 +102,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
 
+
 ## Results
 ### RNN Model 1 (Score Prediction)
 For the first RNN score prediction model, we were ultimately unable to yield a good prediction result. With the moderately sized model that we used, we were able to only achieve a test MSE of 6337, and an MAE of 14.08.
@@ -117,6 +118,7 @@ Test MSE: 6337.0185546875
 ![actual vs predict](/DataCleaning/graphs/small_RNN_pred_vs_actual.png)
 File Link: [improved_model.ipynb](/Improved_Model/improved_model.ipynb)
 
+
 ### RNN Model 2 (Subreddit Classification)
 For the RNN model for subreddit classification, we used a fairly complex model and was able to get decent result for the predictions of from which of the top 10 subreddits the comments came from.
 
@@ -128,6 +130,8 @@ We got an overall accuracy on our classification predictions of 0.55. The traini
 
 ![loss graph](/DataCleaning/graphs/test_train_loss.png)
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
+
+
 ## Discussion
 ### RNN Model 1 (Score Prediction)
 For this first model, I believe that the main issue that it had was the simple fact that most comments do not receive a lot of upvotes. In hindsight, we should have realized that this would be an issue during our data cleaning and exploration.
@@ -149,6 +153,7 @@ We had found that even at the 75 percentile, the upvote count was still at only 
 ![actual vs predict graph](/DataCleaning/graphs/small_RNN_pred_vs_actual.png)
 File Link: [improved_model.ipynb](/Improved_Model/improved_model.ipynb)
 
+
 In conclusion, for this model, we tried to make a model predict something impossible. Which is the question of, out of millions of comments, which ones are going to go viral. If our model worked sucessfully, it probably would've been able to be used to make a lot of money.
 
 In the future, we could potentially make our model run better by proprocessing our data better. Specifically, performing lemmatization and stemming would reduce the computational complexity of our model. 
@@ -160,6 +165,7 @@ For this classification model, we ended up with rather good results. Out of the 
 
 ![report](/DataCleaning/graphs/classification_report.png)
 File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb)
+
 
 From the classification report, we can isolate some of the individual subreddits to see what may have cause the difference in precision and recall for them. 
 
