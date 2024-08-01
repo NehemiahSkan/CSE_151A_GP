@@ -8,6 +8,7 @@ We also decided to use only english comments so we used the language feature to 
 We removed punctuation from our data and also made all the comments lowercase. 
 We removed common words like it, the, a, and, to for the purpose of finding patterns with the words in the comments. These words are known as stopwords.
 
+
 ### Data Exploration
 We made a chart of some frequently used words in comments and the scores they had. We used a smaller version of the dataframe for our initial data exploration due to the sheer size of our data set.
 
@@ -56,6 +57,8 @@ tokenizer = Tokenizer(num_words=num_words)
 tokenizer.fit_on_texts(word_list)
 tokenized_train = tokenizer.texts_to_sequences(sample_df['tokenized'])
 ```
+
+We are perfroming tokenization to parse a body of text into smaller units called tokens. For example, we can parse documents into sentences, parse sentences into words or phrases, and parse words into subwords or characters. 
 
 Then we ran the model with an embedding layer and an LSTM RNN layer.
 
@@ -141,6 +144,8 @@ We had found that even at the 75 percentile, the upvote count was still at only 
 
 In conclusion, for this model, we tried to make a model predict something impossible. Which is the question of, out of millions of comments, which ones are going to go viral. If our model worked sucessfully, it probably would've been able to be used to make a lot of money.
 
+In the future, we could potentially make our model run better by proprocessing our data better. Specifically, performing lemmatization and stemming would reduce the computational complexity of our model. 
+
 ### RNN Model 2 (Subreddit Classification)
 For this classification model, we ended up with rather good results. Out of the 10 possible choices for subreddits, the model was able to select the right one 55% of the time.
 
@@ -157,4 +162,4 @@ After browsing through the subreddit, I found that there were many comments of w
 On the other hand, we can also see there are those such as the NoStupidQuestions subreddit which had an abysmal precision score of 0.04. This is most likely due to the much less focused topics of this subreddit. Whereas all the comments in the CFB subreddit were mainly about football, this subreddit allowed for questions of any kind from any domain. As a result, the comments in this subreddit have no clearly distinctive formats or topics, rendering it very difficult to predict whether or not a comment came from this subreddit or not.
 
 ## Conclusion
-In conclusion, we tried numerous models to try to process and better understand the relationships between words, upvotes, and subreddits in our dataset. The score prediction had always been a wild shot, and to also somewhat test how "magical" neural networks really are. However, though our failures with those predictions, we have understood the limits of these models with certain distributions of data. We were still quite happy with the classification model however, and it helped us gain a lot of insight to how discussion in different subreddits worked. Ultimately, we believe that we did an insightful investigation into these reddit comments, and in the future we could investigate more complex relations of these comments with each other, perhaps classification with more subreddits than just the top 10, or focusing more on differences of comments from the same post.
+In conclusion, we tried numerous models to try to process and better understand the relationships between words, upvotes, and subreddits in our dataset. The score prediction had always been a wild shot, and to also somewhat test how "magical" neural networks really are. However, though our failures with those predictions, we have understood the limits of these models with certain distributions of data. We were still quite happy with the classification model however, and it helped us gain a lot of insight to how discussion in different subreddits worked. Ultimately, we believe that we did an insightful investigation into these reddit comments, and in the future we could investigate more complex relations of these comments with each other, perhaps classification with more subreddits than just the top 10, or focusing more on differences of comments from the same post. Also, while we are not making an NLP model, we are working closely with text and machine understanding of text. In the future, we can experiment with different text vectorization methods such as Bag-of-words or TF-IDF. 
