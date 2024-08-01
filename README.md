@@ -1,16 +1,19 @@
 ## Introduction
-The objective of the project is to explore the relationship between keywords and upvotes of reddit comments. Firstly, we want to predict the keywords that yield the highest upvote tally on the platform Reddit. Secondly, we plan to classify comments and posts categorically based on the subreddit of the comment. The dataset we will be using is a very large, clean dataset; it contains more than twelve million rows of data containing information about each comment within a Reddit post. We will use features such as the content of the comment, and the comment score (the number of downvotes subtracted from the number of upvotes). We also plan to use information such as the subreddit, and post/comment IDs in order to further understand our data. To summarize, the end result will provide a better understanding of human interaction on the Reddit platform, as well as the factors that play a role in the engagement and support for topics in the online community.
+The objective of the project is to explore the relationship between keywords and upvotes of reddit comments. Firstly, we want to predict the keywords that yield the highest upvote tally on the platform Reddit. Secondly, we plan to classify comments and posts categorically based on the subreddit of the comment. The dataset we will be using is a very large, clean dataset; it contains more than twelve million rows of data containing information about each comment within a Reddit post. We will use features such as the content of the comment, and the comment score (the number of downvotes subtracted from the number of upvotes). We also plan to use information such as the subreddit, and post/comment IDs in order to further understand our data. To summarize, the end result will provide a better understanding of human interaction on the Reddit platform, as well as the factors that play a role in the engagement and support for topics in the online community. 
 
 ## Methods
 ### Preprocessing
-To clean up the data, we got rid of some features that we decided we were not going to use, such as url, author, token_count.
-We also decided to use only english comments so we used the language feature to remove the rows that were not classified as english.
-We removed punctuation from our data and also made all the comments lowercase. 
-We removed common words like it, the, a, and, to for the purpose of finding patterns with the words in the comments. These words are known as stopwords.
+To clean up the data:
+- We got rid of some features that we decided we were not going to use - such as url, author, and token_count.
+- We also decided to use only english comments so we used the language feature to remove the rows that were not classified as english.
+- We removed punctuation from our data and also made all the comments lowercase. 
+- We removed common words like it, the, a, and, to for the purpose of finding patterns with the words in the comments These words are known as stopwords.
+
+We also created some iterations of our dataframe that vectorized, or tokenized the comment words in our dataframe. Thus, making out data easier to manipulate.
 
 
 ### Data Exploration
-We made a chart of some frequently used words in comments and the scores they had. We used a smaller version of the dataframe for our initial data exploration due to the sheer size of our data set.
+We made a chart of frequently used words in comments and the corresponding upvote/downvote score associated with those comments. Thus, providing some initial insight into words that might be associated with high upvote scores. We used a smaller version of the dataframe for our initial data exploration due to the sheer size of our data set.
 
 We started by exploring the most common words.
 ![word_freq](DataCleaning/graphs/word_frequencies_from_640k_samples.png)
@@ -100,9 +103,9 @@ File Link: [classify_model_full.ipynb](/Improved_Model/classify_model_full.ipynb
 
 ## Results
 ### RNN Model 1 (Score Prediction)
-For the first RNN score prediction model, we were ultimately unable to yield a good prediction result. With a moderately sized model, we were able to only achieve a test MSE of 6337, and an MAE of 14.08.
+For the first RNN score prediction model, we were ultimately unable to yield a good prediction result. With the moderately sized model that we used, we were able to only achieve a test MSE of 6337, and an MAE of 14.08.
 
-We only ran the training for one epoch after seeing the loss not changing significantly towards the end of the epoch.
+We only ran the training for one epoch after seeing the loss not changing significantly towards the end of the epoch. Furthermore, our computational resources limited our ability to change other parameters in use all of the data as effectively. We attempted to run the model, and different iterations of the model that minimized computational resources more on the SDSC. However, the SDSC consistently crashed. Thus, this would be a challenge we could overcome if we were to continue this project in the future.
 
 ```
 Training MAE: 14.323173522949219
@@ -162,4 +165,8 @@ After browsing through the subreddit, I found that there were many comments of w
 On the other hand, we can also see there are those such as the NoStupidQuestions subreddit which had an abysmal precision score of 0.04. This is most likely due to the much less focused topics of this subreddit. Whereas all the comments in the CFB subreddit were mainly about football, this subreddit allowed for questions of any kind from any domain. As a result, the comments in this subreddit have no clearly distinctive formats or topics, rendering it very difficult to predict whether or not a comment came from this subreddit or not.
 
 ## Conclusion
+<<<<<<< HEAD
 In conclusion, we tried numerous models to try to process and better understand the relationships between words, upvotes, and subreddits in our dataset. The score prediction had always been a wild shot, and to also somewhat test how "magical" neural networks really are. However, though our failures with those predictions, we have understood the limits of these models with certain distributions of data. We were still quite happy with the classification model however, and it helped us gain a lot of insight to how discussion in different subreddits worked. Ultimately, we believe that we did an insightful investigation into these reddit comments, and in the future we could investigate more complex relations of these comments with each other, perhaps classification with more subreddits than just the top 10, or focusing more on differences of comments from the same post. Also, while we are not making an NLP model, we are working closely with text and machine understanding of text. In the future, we can experiment with different text vectorization methods such as Bag-of-words or TF-IDF. 
+=======
+In conclusion, we tried numerous models to try to process and better understand the relationships between words, upvotes, and subreddits in our dataset. We also only scratched the surface in harnessing the massive dataset that we took on. The score prediction had always been a wild shot, and to also somewhat test how "magical" neural networks really are. However, though our failures with those predictions, we have understood the limits of these models with certain distributions of data. We were still quite happy with the classification model however, and it helped us gain a lot of insight to how discussion in different subreddits worked. Ultimately, we believe that we did an insightful investigation into these reddit comments, and in the future we could investigate more complex relations of these comments with each other, perhaps classification with more subreddits than just the top 10, or focusing more on differences of comments from the same post.
+>>>>>>> f92ab2bf4b5d5bd5cbc678cef4fff652b4e96fbb
